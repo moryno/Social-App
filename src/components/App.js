@@ -1,5 +1,11 @@
+import Login from "../pages/login/Login";
+
 function App() {
-  return <div>Hello</div>;
+  return (
+    <div>
+      <Login />
+    </div>
+  );
 }
 
 export default App;
