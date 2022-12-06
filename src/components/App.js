@@ -5,6 +5,7 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
+import "../style.scss";
 
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile";
@@ -68,7 +69,7 @@ function App() {
     },
   ]);
   return (
-    <div>
+    <div className="theme-dark">
       <RouterProvider router={router} />
     </div>
   );
