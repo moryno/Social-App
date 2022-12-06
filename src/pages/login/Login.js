@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    login();
+    // TO Do
   };
   return (
     <div className="login">
