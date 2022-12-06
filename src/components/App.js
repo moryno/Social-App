@@ -16,9 +16,10 @@ import RightBar from "./rightbar/RightBar";
 import LeftBar from "./leftbar/LeftBar";
 import { useContext } from "react";
 import { DarkModeContext } from "../context/darkModeContext";
+import { UserContext } from "../context/authContext";
 
 function App() {
-  const currentUser = true;
+  const { currentUser } = useContext(UserContext);
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
