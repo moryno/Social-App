@@ -14,9 +14,12 @@ import Register from "../pages/register/Register";
 import Navbar from "./navbar/Navbar";
 import RightBar from "./rightbar/RightBar";
 import LeftBar from "./leftbar/LeftBar";
+import { useContext } from "react";
+import { DarkModeContext } from "../context/darkModeContext";
 
 function App() {
   const currentUser = true;
+  const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
     return (
@@ -69,7 +72,7 @@ function App() {
     },
   ]);
   return (
-    <div className="theme-dark">
+    <div className={`theme-${darkMode ? "dark" : "light"}`}>
       <RouterProvider router={router} />
     </div>
   );
