@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     name: "",
     username: "",
@@ -26,7 +27,7 @@ const Register = () => {
         "http://localhost:3030/api/auth/register",
         inputs
       );
-      data && window.location.replace("/login");
+      navigate("/login");
     } catch (error) {
       setError(error.response.data);
     }
