@@ -1,7 +1,14 @@
 import Post from "../post/Post";
 import "./posts.scss";
+import { useQuery } from "react-query";
 
 const Posts = () => {
+  const { isLoading, error, data } = useQuery("repoData", () =>
+    fetch("https://api.github.com/repos/tannerlinsley/react-query").then(
+      (res) => res.json()
+    )
+  );
+
   const posts = [
     {
       id: 1,
